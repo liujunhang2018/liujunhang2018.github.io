@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术人的发展 on 思考让灵魂距离星空更近</title>
+    <link>/tags/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E5%8F%91%E5%B1%95/</link>
+    <description>Recent content in 技术人的发展 on 思考让灵魂距离星空更近</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 26 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E5%8F%91%E5%B1%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>不灌鸡汤，年龄渐长，技术人的发展之路该怎么走？</title>
+      <link>/post/%E5%B9%B4%E9%BE%84%E6%B8%90%E9%95%BF%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BA%BA%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E5%B9%B4%E9%BE%84%E6%B8%90%E9%95%BF%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BA%BA%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E/</guid>
+      <description>技术圈中的很多人，最初都坚定地认为coding能改变世界。然而三五年过去后，还能不忘初心的人，少之又少。随着年龄的增长，梦想已被束之高阁，面</description>
+    </item>
+    
+  </channel>
+</rss>
