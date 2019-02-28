@@ -803,7 +803,7 @@
 
 &lt;p&gt;在浏览器内的效果如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/image-20190227115657453.png&#34; alt=&#34;image-20190227115657453&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/../../public/image/image-20190227115657453.png&#34; alt=&#34;image-20190227115657453&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;你会发现，通过函数的形式，可以节省大量的工作，而使用函数只需要两步：&lt;strong&gt;定义函数&lt;/strong&gt;、&lt;strong&gt;调用函数&lt;/strong&gt;。&lt;/p&gt;
 
