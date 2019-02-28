@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JavaScript基础之函数 - 思考让灵魂距离星空更近</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="雍和" />
+  <meta name="description" content="函数课程之前的准备和了解 在来了解函数之前，我们先来看一下下面的这段代码： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;示例&amp;lt;/title&amp;gt; &amp;lt;script" />
+
+  <meta name="keywords" content="yonghe, web开发, 日志" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="/post/jaacript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="JavaScript基础之函数" />
+<meta property="og:description" content="函数课程之前的准备和了解 在来了解函数之前，我们先来看一下下面的这段代码： &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;示例&lt;/title&gt; &lt;script" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/jaacript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/" />
+<meta property="article:published_time" content="2019-02-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-02-27T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="JavaScript基础之函数">
+<meta itemprop="description" content="函数课程之前的准备和了解 在来了解函数之前，我们先来看一下下面的这段代码： &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;示例&lt;/title&gt; &lt;script">
+
+
+<meta itemprop="datePublished" content="2019-02-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="7615">
+
+
+
+<meta itemprop="keywords" content="JavaScript,函数,web前端基础," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript基础之函数"/>
+<meta name="twitter:description" content="函数课程之前的准备和了解 在来了解函数之前，我们先来看一下下面的这段代码： &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;示例&lt;/title&gt; &lt;script"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">雍和</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">思考让灵魂距离星空更近</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">分类</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      雍和
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">思考让灵魂距离星空更近</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">JavaScript基础之函数</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-02-27" class="post-time">
+          2019-02-27
+        </time>
+        <div class="post-category">
+            <a href="/categories/web%E5%BC%80%E5%8F%91/"> web开发 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#函数课程之前的准备和了解">函数课程之前的准备和了解</a></li>
+<li><a href="#函数的概念">函数的概念</a></li>
+<li><a href="#定义一个函数">定义一个函数</a></li>
+<li><a href="#函数的调用">函数的调用</a></li>
+<li><a href="#简单调用">简单调用</a></li>
+<li><a href="#在表达式中调用">在表达式中调用</a></li>
+<li><a href="#在事件中调用">在事件中调用</a></li>
+<li><a href="#通过链接调用函数">通过链接调用函数</a></li>
+<li><a href="#变量在函数中的一些变化">变量在函数中的一些变化</a></li>
+<li><a href="#变量提升">变量提升</a></li>
+<li><a href="#函数提升">函数提升</a></li>
+<li><a href="#练习-循环九九乘法表">练习：循环九九乘法表</a></li>
+<li><a href="#函数参数的升级体验">函数参数的升级体验</a></li>
+<li><a href="#函数的return">函数的return</a></li>
+<li><a href="#函数的分类">函数的分类</a></li>
+<li><a href="#闭包函数">闭包函数</a></li>
+<li><a href="#回调函数">回调函数</a></li>
+<li><a href="#递归函数">递归函数</a></li>
+<li><a href="#练习">练习</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="函数课程之前的准备和了解">函数课程之前的准备和了解</h2>
+
+<p>在来了解函数之前，我们先来看一下下面的这段代码：</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;示例&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var sum=0;
+        for(var i=1;i&lt;50;i+=2)
+        {
+            sum+=i;
+        }
+        document.write(&quot;50以内所有奇数和为：&quot;+sum);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>上面代码的功能是计算50以内奇数的和，代码很简单，但是如果我们还需要再来计算下100以内的奇数和呢？</p>
+
+<pre><code class="language-html"> &lt;script type=&quot;text/javascript&quot;&gt;
+        var sum1=0;
+        for(var i=1;i&lt;50;i+=2)
+        {
+            sum1+=i;
+        }
+        document.write(&quot;50以内所有奇数和为：&quot;+sum1);
+        document.write(&quot;&lt;br/&gt;&quot;);
+        var sum2=0;
+        for(var j=1;j&lt;100;j+=2)
+        {
+            sum2+=j;
+        }
+        document.write(&quot;100以内所有奇数和为：&quot;+sum2);
+    &lt;/script&gt;
+</code></pre>
+
+<p>我们只需要将代码进行简单的复制和更改，就可以获得我们想要的答案，但是如果这个时候的需求是，计算50、100、150、220等等数值以内的奇数和，我们该怎么做呢？难道要不断的复制代码吗？</p>
+
+<p>如果真的这样做了，那么我们的代码就会变得异常冗余。</p>
+
+<p>这个时候，我们今天的主角函数就要登场了。</p>
+
+<p>虽然没有学函数，但是我们不妨先来看下效果：</p>
+
+<pre><code class="language-html"> &lt;script type=&quot;text/javascript&quot;&gt;
+        //定义函数
+        function sum(n)
+        {
+            var m=0;
+            for(var i=1;i&lt;n;i+=2)
+            {
+                m+=i;
+            }
+            document.write(n+&quot;以内所有奇数和为：&quot;+m+&quot;&lt;br/&gt;&quot;);
+        }
+        //调用函数，计算50以内所有奇数的和
+        sum(50);
+        //调用函数，计算100以内所有奇数的和
+        sum(100);
+        //调用函数，计算150以内所有奇数的和
+        sum(150);
+        //调用函数，计算200以内所有奇数的和
+        sum(200);
+        //调用函数，计算250以内所有奇数的和
+        sum(250);
+    &lt;/script&gt;
+</code></pre>
+
+<p>在浏览器内的效果如下：</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227115657453.png" alt="image-20190227115657453" /></p>
+
+<p>你会发现，通过函数的形式，可以节省大量的工作，而使用函数只需要两步：<strong>定义函数</strong>、<strong>调用函数</strong>。</p>
+
+<h2 id="函数的概念">函数的概念</h2>
+
+<p>函数，就是一个<strong>一系列JavaScript语句的集合</strong>，这是为了完成某一个会重复使用的特定功能。在需要该功能的时候，直接调用函数即可，而不必每次都编写一大堆重复的代码。并且在需要修改该功能的时候，也只要修改和维护这一个函数即可。</p>
+
+<p>总之，将语句集合成函数，好处就是方便代码重用。并且，一个好的函数名，可以让人一眼就知道这个函数实现的是什么功能，方便维护。</p>
+
+<h2 id="定义一个函数">定义一个函数</h2>
+
+<p>我们在上面说过，想要使用函数，需要两个步骤：<strong>定义函数</strong>、<strong>调用函数</strong>。</p>
+
+<p>那么该如何定义一个函数呢？</p>
+
+<p>在JavaScript中，可以通过<strong>function关键</strong>字来定义一个函数(并且function关键字不可以省略)。</p>
+
+<p><em>Tip：在定义一个函数的时候，你可以选择给函数设置一个名字，也可以选择不给他设置名字。</em></p>
+
+<p><strong>不设置函数名的函数</strong>（赋值式）</p>
+
+<p>例如下面的函数语法就是没有设置名字的函数</p>
+
+<pre><code class="language-html">function (参数1,参数2...) {
+	// 函数体语句
+}
+</code></pre>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+		
+		var documentFont = function () { // 定义函数。
+			document.write(&quot;这是一段输出在页面当中的文字&quot;);
+		}
+		documentFont(); // 调用函数
+
+&lt;/script&gt;
+</code></pre>
+
+<p>效果如下：</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227140412523.png" alt="image-20190227140412523" /></p>
+
+<p>Tip：定义一个函数之后，函数本身并不会执行，而是需要调用才可以执行。这一点一定要注意。</p>
+
+<p><strong>设置函数名的函数</strong>(声明式)</p>
+
+<p>“指定函数名的函数”是JavaScript中使用最广泛的方法，反而“不指定函数名的函数”用得比较少。</p>
+
+<p>语法：</p>
+
+<pre><code class="language-javascript">function 函数名(参数1,参数2,….,参数n) 
+{
+    //函数体语句
+    return 表达式;
+}
+</code></pre>
+
+<p><strong>解析</strong>：</p>
+
+<p>定义函数<strong>必须使用function关键字。</strong></p>
+
+<p><strong>函数名必须是唯一的</strong>，尽量通俗易懂，并且跟你定义的代码有关。</p>
+
+<p>函数可<strong>以使用return语句将某个值返回，也可以没有返回值</strong>。</p>
+
+<p><strong>参数是可选的，可以不带参数，也可以带多个参数</strong>。如果是多个参数的话，参数之间要用英文逗号隔开。</p>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	 //定义函数
+        function addNum(a,b)
+        {
+            var m=a+b;
+            return m;
+        }
+        //调用函数
+        var sum=addNum(1,2);
+        document.write(&quot;相加的结果是：&quot;+sum);
+&lt;/script&gt;
+</code></pre>
+
+<p>结果：</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227141649565.png" alt="image-20190227141649565" /></p>
+
+<p>我们在<strong>定义函数的时候用到的参数，那就叫“形参”</strong>，例如上面的a和b就是形参。我们<strong>在调用函数时，与形参对应的数据叫“实参</strong>。”其实“形参”和“实参”从名字上面来看就很好理解，所谓的形参就是“形同虚设”而到头来被其他数据替代掉的参数，实参就是实实在在的数据。</p>
+
+<p>使用形参和实参，需要注意形参和实参是<strong>一一对应</strong>的。通常，在定义函数时使用了多少形参，那么在函数调用时也必须给出多少个参数。</p>
+
+<p>一句话：定义函数时的参数叫“形参”，调用函数时的参数叫“实参”。</p>
+
+<h2 id="函数的调用">函数的调用</h2>
+
+<p>使用函数的两个需要注意的问题：<strong>定义函数</strong>、<strong>调用函数</strong>。</p>
+
+<p>下面来说一下函数的调用。</p>
+
+<p>常用的函数的调用方式有四种：</p>
+
+<ul>
+<li>简单调用</li>
+<li>在表达式中调用</li>
+<li>在事件响应中调用</li>
+<li>通过链接调用</li>
+</ul>
+
+<p>下面我们分别来说一下不同的调用方式：</p>
+
+<h2 id="简单调用">简单调用</h2>
+
+<p>JS函数简单调用，也被称为直接调用。该方法一般比较适用于没有返回值的函数。也就是说相当于执行函数中的语句集合。</p>
+
+<pre><code class="language-javascript">函数名(实参1,实参2,….实参n);
+</code></pre>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	  //定义函数
+        function alertSum()
+        {
+            //计算1+2+3+…+10的和
+            var sum=0;
+            for(var i=1;i&lt;=10;i++)
+            {
+                sum=sum+i;
+            }
+        alert(sum);
+        }
+        //调用函数
+        alertSum();
+&lt;/script&gt;
+</code></pre>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227143540006.png" alt="image-20190227143540006" /></p>
+
+<h2 id="在表达式中调用">在表达式中调用</h2>
+
+<p>在表达式中调用函数的方式，一般适用于有返回值的函数，然后函数的返回值参与表达式的计算。通常该方式还会和输出语句（如document.write()、alert()等）搭配使用。</p>
+
+<p>例如下面的示例，来判断给定的年份是否是闰年：</p>
+
+<blockquote>
+<p>公历闰年的简单计算方法（符合以下条件之一的年份即为闰年）
+1.能被4整除而不能被100整除.
+2.能被400整除.</p>
+</blockquote>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	// 定义函数。
+	function isLeapYear(year) {
+
+
+		// 判断闰年的条件
+		if ((year%4==0) &amp;&amp; (year%100!=0) || (year%400==0)) {
+			return year + &quot;年是闰年&quot;;
+		}else {
+			return year + &quot;年不是闰年&quot;;
+		}
+
+
+	}
+	// 调用函数 
+	// 使用一个变量来承接返回值
+	var reYear = isLeapYear(2008);
+	document.write(reYear);
+</code></pre>
+
+<h2 id="在事件中调用">在事件中调用</h2>
+
+<p>JavaScript是基于事件模型的程序语言，页面加载、用户点击、移动光标等都会产生事件。当事件产生时，JavaScript就可以调用某个函数来针对这个事件做出响应。</p>
+
+<pre><code class="language-html">&lt;button id=&quot;btn&quot;&gt;点击&lt;/button&gt;
+&lt;button onclick=&quot;alertHello()&quot;&gt;点击&lt;/button&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	
+	// 先找到元素
+	var mBtn = document.getElementById('btn');
+
+	// 给这个按钮绑定事件
+	mBtn.onclick = function () {
+		alert(&quot;啊，我被点了一下&quot;);
+	}
+
+	function alertHello() {
+		alert(&quot;hi man&quot;);
+	}
+&lt;/script&gt;
+</code></pre>
+
+<p>这就是所谓的在事件响应中调用函数，这种方式非常实用。上面实例中的事件是“鼠标的点击事件”。</p>
+
+<h2 id="通过链接调用函数">通过链接调用函数</h2>
+
+<p>函数除了可以在事件响应中调用外，还可以通过超链接来调用函数。</p>
+
+<pre><code class="language-html">&lt;a href=&quot;javascript:函数名&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>说明：</p>
+
+<p>在超链接中调用函数，指的就是在a标签的href属性中使用“javascript:函数名”来调用函数。当用户点击该超链接时，就会执行调用的相应函数。</p>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;a href=&quot;javascript:alertHello();&quot;&gt;点击&lt;/a&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	function alertHello() {
+		alert('Hi,Man!');
+	}
+&lt;/script&gt;
+</code></pre>
+
+<p>Tip：我们也可以写成下面这样，这样可以去除隐藏锚点。</p>
+
+<pre><code class="language-html">&lt;a href=&quot;javascript:;&quot;&gt;点击&lt;/a&gt;
+</code></pre>
+
+<h2 id="变量在函数中的一些变化">变量在函数中的一些变化</h2>
+
+<p><strong>什么是作用域？</strong></p>
+
+<p>作用，能做的事。域，领域。 根据词意理解，作用域解释起来就是说作用范围。</p>
+
+<p><strong>全局变量和局部变量</strong></p>
+
+<p>其实，所谓的全局变量和局部变量，只不过是根据变量的范围来给变量进行了一个区分。说到底，无论是全局变量还是局部变量都是变量。</p>
+
+<p>从作用域的角度来说，全局变量指的就是在作用域范围覆盖全局(也就是当前整个文件)，而局部变量就是作用域范围仅限于某个范围内(在函数内部)。</p>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	
+
+	// 声明全局变量 
+	var a = &quot;hello,world&quot;;
+
+	function fn1() {
+		var b = &quot;this is b&quot;; // 这个是局部变量
+        // b 的作用域范围仅限于函数内部
+        console.log(b);// this is b
+	}
+
+	// 我们可以尝试对两个变量进行调用
+	console.log(a); // hello,world
+	console.log(b); // b is note defined 此时b的调用位置已经超过了b的作用域范围。
+
+&lt;/script&gt;
+</code></pre>
+
+<p>So,函数的出现，除了带来了方便，也带来了一些改变。例如变量分成了全局变量和局部变量。作用域也分成了全局作用域和局部作用域(也叫函数作用域)。</p>
+
+<p><strong>函数内部的全局变量</strong></p>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+
+	function fn1() {
+		a = 10 ;  // 在函数中声明变量并未使用var 
+
+		console.log(a); // 10 
+	}
+	fn1();
+
+	console.log(a); // 10
+
+&lt;/script&gt;
+</code></pre>
+
+<p>在上面的示例中，在函数中声明变量并没有使用<code>var</code>关键字，那么此时这个变量就变成了一个全局变量。</p>
+
+<p>但是这种方式其实是一种不推荐的写法。此种写法容易造成<strong>变量的污染</strong>。</p>
+
+<h2 id="变量提升">变量提升</h2>
+
+<p>我们上面了解了全局变量和局部变量，局部作用域(函数作用域)和全局作用域。那么下面再来看另外一种在js中非常有意思的情况：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+		
+	console.log(a);
+	var a = 10;
+	console.log(a);
+
+
+&lt;/script&gt;
+</code></pre>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227154101350.png" alt="image-20190227154101350" /></p>
+
+<p>上面的代码，第一个会输出<code>undefined</code>，第二个输出为<code>10</code>。</p>
+
+<p>疑问：第一个<code>console.log()</code>语句，输出的是还没有声明的a，为什么会输出一个<code>undefined</code>。</p>
+
+<p>答：原因是js中的变量提升导致。</p>
+
+<p>变量提升即将变量声明提升到它所在作用域的最开始的部分。上面的代码其实在运行的时候相当于变成了下面这个样子：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	var a ;  // 将声明语句提升到了当前变量作用域的最上面	
+	console.log(a); // 此时a相当于声明但是没有赋值
+	a = 10; // 赋值语句原封不动的呆在原地
+	console.log(a); // 此时a已经声明并且赋值
+&lt;/script&gt;
+</code></pre>
+
+<p>例如再来看一下下面的示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+
+	var a = &quot;hello&quot;; 
+
+	function fn1() {
+		var b = &quot;world&quot;;
+	}
+
+&lt;/script&gt;
+</code></pre>
+
+<p>上面的代码在我们看不到的地方发生变量提升后是什么样子呢？</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	var a ; // a 的变量提升被提升到a作用域的最顶端
+	a = &quot;hello&quot;; 
+
+	function fn1() {
+		var b; // b声明语句被提升到b作用域的最顶端
+		b = &quot;world&quot;;
+	}
+
+&lt;/script&gt;
+</code></pre>
+
+<p>Ok，相信你，现在应该可以理解了变量的提升，那么再来思考一下下面的这种特殊情况：</p>
+
+<p>可以先来看下面的示例。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	
+
+	var a = 10;
+
+	function fn1() {
+		console.log(a);
+	}
+
+	fn1(); // 调用函数
+
+&lt;/script&gt;
+</code></pre>
+
+<p>上面的函数fn1输出结果相信很多同学都可以猜得到，没错，上面的代码会在控制台输出10.</p>
+
+<p><strong>分析：</strong></p>
+
+<p>我们在函数外部声明了全局变量a，那么这个变量在函数中也同样是可以使用的。</p>
+
+<p>上面的示例很简单，那么看下升级版：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	
+
+	var a = 10;
+
+	function fn1() {
+		console.log(a);
+        var a = 20;
+        console.log(a);
+	}
+
+	fn1(); // 调用函数
+
+&lt;/script&gt;
+</code></pre>
+
+<p>此时函数中的第一个<code>console.log()</code>语句输出结果为？第二个输出结果为？</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227155239554.png" alt="image-20190227155239554" /></p>
+
+<p>第一个输出<code>undefined</code>，为什么呢？</p>
+
+<p>因为函数中重新声明了a，那么这个时候a的声明提升到了函数内部的顶部，覆盖了全局变量a。所以此时直接<code>console.log()</code>a这个变量为undefined。</p>
+
+<h2 id="函数提升">函数提升</h2>
+
+<p>上面我们看了在js中的变量提升，可是在js中，除了变量以外，函数同样也存在着提升现象。</p>
+
+<p>例如：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	console.log(fn1); // ƒ fn1() {alert(123);}
+	function fn1() {alert(123);}
+&lt;/script&gt;
+</code></pre>
+
+<p>我们在函数的声明语句的上面打印了函数，结果没有发生报错，而是顺利的打印出了函数，所以我们说，此时函数也同样发生了变量提升。</p>
+
+<p>当然，也存在一些特殊情况，例如我们说到的函数的另外一种声明方式：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	console.log(fn1); // undefined
+	var fn1 = function () {
+		alert(123);
+	}
+	// fn1();
+&lt;/script&gt;
+</code></pre>
+
+<p>此时，我们会发现，第一句<code>console.log()</code>输出的结果变成了<code>undefined</code>，原因在于函数的声明身上。</p>
+
+<p>这种写法的函数没有直接声明，而是将函数本身赋值给了一个变量的身上。而变量的提升，提升的仅是声明的过程。</p>
+
+<p>可以将上面的代码解释为下面的形式：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	
+	var fn1;
+	console.log(fn1); // 此时我们打印的仅是fn1这个声明但是没有赋值的变量，所以为undefined
+	var fn1 = function () {
+		alert(123);
+	}
+
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="练习-循环九九乘法表">练习：循环九九乘法表</h2>
+
+<p>下面来练习一下通过循环输出乘法口诀表，并且，封装成函数，可以自定义输出到几的乘法表。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+    function fn1(a) {
+        document.write('&lt;table border=&quot;1&quot;&gt;');
+        for(var i=1;i&lt;=a;i++) {
+            document.write(&quot;&lt;tr&gt;&quot;);
+            for (var j=1;j&lt;=i;j++) {
+                document.write('&lt;td&gt;'+i + 'x' + j + '=' + (i * j)   +'&lt;/td&gt;');
+            }
+            document.write('&lt;/tr&gt;');
+        }
+        document.write('&lt;/table&gt;');
+    }
+    fn1(8);
+&lt;/script&gt;
+</code></pre>
+
+<p>效果如下：</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190227161906011.png" alt="image-20190227161906011" /></p>
+
+<h2 id="函数参数的升级体验">函数参数的升级体验</h2>
+
+<p><strong>当实参个数超过形参个数</strong></p>
+
+<p>上面我们在讲解函数的时候，讲解过函数参数分为形参、和实参。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	// 函数的形参和实参
+	function fn1(a,b,c) { // 形参
+		console.log(a,b,c);
+	}
+
+	fn1(10,20,30);// 实参
+&lt;/script&gt;
+</code></pre>
+
+<p>在上面代码中，函数的形参和实参一一对应。</p>
+
+<p>那么如果实参多于形参会怎么样？</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	// 函数的形参和实参
+	function fn1(a,b,c) { // 形参
+		console.log(a,b,c);
+	}
+
+	fn1(10,20,30,40);// 实参数量多于形参数量
+&lt;/script&gt;
+</code></pre>
+
+<p>你会发现，当实参数量多于形参数量时，在浏览器中依然可以运行并且不会报错。</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190228094523140.png" alt="image-20190228094523140" /></p>
+
+<p>那么我们如果想要获取这个多余的形参该怎么办呢？</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	// 函数的形参和实参
+	function fn1(a,b,c) { // 形参
+		console.log(a,b,c);
+		// 获取多余的参数可以依靠arguments
+		console.log(arguments);
+	}
+
+	fn1(10,20,30,40);// 实参数量多于形参数量
+&lt;/script&gt;
+</code></pre>
+
+<p>我们将arguments打印出来看下效果：</p>
+
+<p><img src="/Users/liujunhang/Library/Application Support/typora-user-images/image-20190228100746393.png" alt="image-20190228100746393" /></p>
+
+<p>你可以在这其中看到，函数在调用过程中传递过来的所有的实参。</p>
+
+<p>那么现在我们想要获取传递过来的多余的参数，可以使用arguments关键字参数直接获取。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	// 函数的形参和实参
+	function fn1(a,b,c) { // 形参
+		console.log(a,b,c);
+		// 获取多余的参数可以依靠arguments
+		console.log(arguments[3]); // 40
+	}
+
+	fn1(10,20,30,40);// 实参数量多于形参数量
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>当实参个数少于形参个数</strong></p>
+
+<p>示例：</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+	function fn1(a,b,c) {
+		console.log(a,b,c); // 10 20 undefined
+	}
+	fn1(10,20);
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="函数的return">函数的return</h2>
+
+<p>在上面我们说到函数构成的时候，我们讲到了<code>return</code>，下面来看一下。</p>
+
+<pre><code class="language-javascript">function fn1() {
+    return &quot;hello,world&quot;;
+}
+</code></pre>
+
+<p>return 又叫返回值，不同于直接在函数中输出或者其他操作，使用return的目的是希望通过return在函数的最后拿到想要的值，在函数外面继续其他操作。</p>
+
+<p>例如，上面的代码，返回了字符串<code>hello,world</code>，想要使用，可以使用变量来进行接收。</p>
+
+<pre><code class="language-javascript">function fn1() {
+    return &quot;hello,world&quot;;
+}
+// 使用变量接收
+var a = fn1(); // fn1() 会让函数调用执行，而函数的return会将值返回到这个函数的外部，这样我们在调用的时候就可以通过变量接收
+console.log(a); // hello,world
+</code></pre>
+
+<p>当然，变量可以省略。</p>
+
+<pre><code class="language-javascript">function fn1() {
+    return &quot;hello,world&quot;;
+}
+console.log(fn1()); // hello,world
+</code></pre>
+
+<p>这样也是没有问题的。</p>
+
+<p>Tip：函数只能有一个返回值。返回值后面的代码将不会执行。</p>
+
+<pre><code class="language-javascript">function fn1() {
+    return &quot;hello,world&quot;;
+    console.log('你好'); // 这句代码不会执行
+}
+fn1();
+</code></pre>
+
+<h2 id="函数的分类">函数的分类</h2>
+
+<p>上面我们讲解了函数的基本用法，但是函数其实也存在不同的分类，而所谓的不同分类指的其实就是函数的不同用法，下面我们来简单的讲解一下不同的函数的用法。</p>
+
+<h2 id="闭包函数">闭包函数</h2>
+
+<p>在js中，有全局变量和局部变量之分(在函数内部声明 的变量)。</p>
+
+<p>全局 变量和局部变量在上面的课程中，已经说过，这里不再赘述。</p>
+
+<p>示例：</p>
+
+<pre><code class="language-javascript">var a = 10 ;
+function fn1() {
+    console.log(a); // 函数可以随时调用函数外部的全局变量
+}
+fn1();//10 
+</code></pre>
+
+<p>反之，在函数之外，则没有办法调用函数内部的变量，除非函数内部声明的是全局变量。</p>
+
+<pre><code class="language-javascript">var a = 10;
+function fn1() {
+	console.log(a); // 调用全局变量a
+    var x = 10; // 声明局部变量x
+    y = 20; // 声明全局变量y
+}
+fn1();
+console.log(x); // err 没有办法调用
+console.log(y); // 可以调用到
+</code></pre>
+
+<p><strong>如何从外部读取局部变量？</strong></p>
+
+<p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。</p>
+
+<p>那就是在函数的内部，再定义一个函数。</p>
+
+<pre><code class="language-javascript">function f1(){
+
+　　　　var n=999;
+
+　　　　function f2(){
+　　　　　　alert(n); // 999
+　　　　}
+
+　}
+</code></pre>
+
+<p>在上面的代码中，函数f2就被包括在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1就是不可见的。这就是Javascript语言特有的&rdquo;链式作用域&rdquo;结构（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
+
+<p>既然f2可以读取f1中的局部变量，那么只要把f2作为返回值，我们不就可以在f1外部读取它的内部变量了吗！</p>
+
+<pre><code class="language-javascript">function f1(){
+
+　　　　var n=999;
+
+　　　　function f2(){
+　　　　　　alert(n); 
+　　　　}
+
+　　　　return f2;
+
+　　}
+
+　　var result=f1();
+
+　　result(); // 999
+</code></pre>
+
+<p><strong>闭包的概念</strong></p>
+
+<p>上面的代码其实就是一个常见的闭包。在很多书籍里关于闭包的定义非常复杂难懂，而在网上的答案也众口不一。</p>
+
+<p>个人的理解是：</p>
+
+<p><strong>闭包就是能够读取其他函数内部变量的函数。</strong></p>
+
+<p>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成&rdquo;<strong>定义在一个函数内部的函数</strong>&ldquo;。</p>
+
+<p>所以，在本质上，<strong>闭包就是将函数内部和函数外部连接起来的一座桥梁。</strong></p>
+
+<p><strong>闭包函数的用途</strong></p>
+
+<p>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
+
+<p>怎么来理解这句话呢？请看下面的代码。</p>
+
+<pre><code class="language-javascript">function f1(){
+
+　　　　var n=999;
+
+　　　　nAdd=function(){n+=1}
+
+　　　　function f2(){
+　　　　　　alert(n);
+　　　　}
+
+　　　　return f2;
+
+　　}
+
+　　var result=f1();
+
+　　result(); // 999
+
+　　nAdd();
+
+　　result(); // 1000
+</code></pre>
+
+<p>在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</p>
+
+<p>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
+
+<p>这段代码中另一个值得注意的地方，就是&rdquo;nAdd=function(){n+=1}&ldquo;这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
+
+<p><strong>使用闭包函数的注意点</strong></p>
+
+<p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
+
+<p>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+
+<h2 id="回调函数">回调函数</h2>
+
+<p><strong>定义</strong></p>
+
+<p>回调函数是一段可执行的代码段，它作为一个参数传递给其他的代码，其作用是在需要的时候方便调用这段（回调函数）代码。</p>
+
+<p>简单的说，其实就是将一个函数作为参数传递到另外一个函数当中去，在这个函数的某些时刻执行那个作为参数传递过来的函数。</p>
+
+<pre><code class="language-javascript">function fn1(parm) {
+	alert(&quot;hello,world&quot;);
+    alert(&quot;hi!Man&quot;);
+    parm();
+}
+function fn2() {
+    alert(&quot;我是fn2&quot;);
+}
+fn1(fn2);
+</code></pre>
+
+<p>上面的fn2作为参数传递到了fn里面，当fn1执行到指定位置的时候，就会调用fn2，这就是一个简单的回调函数。</p>
+
+<p>当然，我们在使用回调函数的时候，更多的时候会在满足某些触发条件之后才会执行回调函数。</p>
+
+<pre><code class="language-javascript">function fn1(parm) {
+	
+    for (var i=0;i&lt;10;i++){
+        console.log(i);
+        if (i==9) {
+            parm();
+        }
+    }
+}
+function fn2() {
+    alert(&quot;我是fn2&quot;);
+}
+fn1(fn2);
+</code></pre>
+
+<p>例如上面的代码，当i=9时，才会执行回调函数。</p>
+
+<p>例如我们常用的事件处理函数，其实也是一个回调函数。</p>
+
+<pre><code class="language-html">&lt;button id='btn'&gt;点击&lt;/button&gt;
+&lt;script&gt;
+	var oBtn = document.getElementById('btn');
+    oBtn.onclick = function() {
+        alert(123);
+    }
+&lt;/script&gt;
+</code></pre>
+
+<p>当<code>button</code>元素发生单击这样一个操作之后，才会去执行事件处理函数，也就是回调函数。</p>
+
+<p><strong>回调函数的优点和缺点</strong></p>
+
+<p>优点：</p>
+
+<ul>
+<li><p>DRY，避免代码重复</p></li>
+
+<li><p>可以将通用的逻辑抽象</p></li>
+
+<li><p>业务逻辑分离</p></li>
+
+<li><p>提高代码的可维护性和可读性</p></li>
+
+<li><p>分离专职函数</p></li>
+</ul>
+
+<p>缺点：</p>
+
+<ul>
+<li>回调函数层级太多，使用困难</li>
+<li>大量的回调函数运行， 消耗内存，影响性能。</li>
+</ul>
+
+<h2 id="递归函数">递归函数</h2>
+
+<p>递归函数简单的说，就是在函数内部调用当前函数本身。不过在使用递归函数的时候要小心造成死循环。</p>
+
+<p>所以，在定义递归函数的时候，需要2个必要条件：</p>
+
+<ul>
+<li>首先要包括一个结束递归的条件</li>
+<li>其次包括一个递归调用的语句</li>
+</ul>
+
+<p>示例：</p>
+
+<pre><code class="language-javascript">function fact(param) {
+    
+    if (param &lt; 1) {
+        return 1 ;
+    }else {
+        return param * fact(param-1);
+    }
+    
+}
+console.log(fact(3)); // 6 
+</code></pre>
+
+<h2 id="练习">练习</h2>
+
+<p><strong>斐波那契数列：</strong></p>
+
+<p>介绍：
+    从数学的角度来讲，斐波那契数列表示的是这样的一个数列：1、1、2、3、5、8、13、21、34&hellip;&hellip;。</p>
+
+<p>从第三个值开始，等于前两个值得和。</p>
+
+<p>示例：</p>
+
+<pre><code class="language-javascript">// 例如求第四个值
+	// 斐波那契数列
+	function fn1(n) {
+		if (n &lt;= 2) {
+			return 1 ;
+		}else {
+			return fn1(n-1) + fn1(n-2);
+		}
+	}
+
+	console.log(fn1(4)); // 3 
+</code></pre>
+
+<p><strong>素数：</strong></p>
+
+<p>素数又称质数，是大于1的自然数，并且只有1和它本身两个因数。</p>
+
+<p>下面来写一个函数，判断一下是否是素数？</p>
+
+<pre><code class="language-javascript">function fn1(n) {
+
+		for (var i=2;i&lt;n;i++){
+
+			if (n % i ==0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	console.log(fn1(8)); // false
+	console.log(fn1(2)); // true
+	console.log(fn1(3)); // true
+	console.log(fn1(6)); // false
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">雍和</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-02-27</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/javascript/">JavaScript</a>
+          <a href="/tags/%E5%87%BD%E6%95%B0/">函数</a>
+          <a href="/tags/web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">web前端基础</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/%E4%BF%A1%E6%81%AF%E7%A2%8E%E7%89%87%E5%8C%96%E7%9A%84%E6%97%B6%E4%BB%A3%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%89%E9%80%BB%E8%BE%91%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E8%A1%A8%E8%BE%BE/">
+            <span class="next-text nav-default">信息碎片化的时代，如何进行有逻辑的思考与表达？</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="https://github.com/liujunhang2018" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/p/1005056374925606/home?from=page_100505&amp;mod=TAB#place" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+
+
+<a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        雍和
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

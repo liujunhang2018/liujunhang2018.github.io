@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 思考让灵魂距离星空更近</title>
+    <link>/tags/javascript/</link>
+    <description>Recent content in Javascript on 思考让灵魂距离星空更近</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript基础之函数</title>
+      <link>/post/jaacript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/jaacript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</guid>
+      <description>函数课程之前的准备和了解 在来了解函数之前，我们先来看一下下面的这段代码： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;示例&amp;lt;/title&amp;gt; &amp;lt;script</description>
+    </item>
+    
+  </channel>
+</rss>
