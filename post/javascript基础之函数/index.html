@@ -68,7 +68,7 @@
 
 
 
-<meta itemprop="wordCount" content="7615">
+<meta itemprop="wordCount" content="7596">
 
 
 
@@ -400,10 +400,6 @@
     &lt;/script&gt;
 </code></pre>
 
-<p>在浏览器内的效果如下：</p>
-
-<p><img src="/../../public/image/image-20190227115657453.png" alt="image-20190227115657453" /></p>
-
 <p>你会发现，通过函数的形式，可以节省大量的工作，而使用函数只需要两步：<strong>定义函数</strong>、<strong>调用函数</strong>。</p>
 
 <h2 id="函数的概念">函数的概念</h2>
@@ -442,10 +438,6 @@
 
 &lt;/script&gt;
 </code></pre>
-
-<p>效果如下：</p>
-
-<p><img src="/image-20190227140412523.png" alt="image-20190227140412523" /></p>
 
 <p>Tip：定义一个函数之后，函数本身并不会执行，而是需要调用才可以执行。这一点一定要注意。</p>
 
@@ -486,10 +478,6 @@
         document.write(&quot;相加的结果是：&quot;+sum);
 &lt;/script&gt;
 </code></pre>
-
-<p>结果：</p>
-
-<p><img src="/image-20190227141649565.png" alt="image-20190227141649565" /></p>
 
 <p>我们在<strong>定义函数的时候用到的参数，那就叫“形参”</strong>，例如上面的a和b就是形参。我们<strong>在调用函数时，与形参对应的数据叫“实参</strong>。”其实“形参”和“实参”从名字上面来看就很好理解，所谓的形参就是“形同虚设”而到头来被其他数据替代掉的参数，实参就是实实在在的数据。</p>
 
@@ -539,8 +527,6 @@
         alertSum();
 &lt;/script&gt;
 </code></pre>
-
-<p><img src="/image-20190227143540006.png" alt="image-20190227143540006" /></p>
 
 <h2 id="在表达式中调用">在表达式中调用</h2>
 
@@ -695,8 +681,6 @@
 &lt;/script&gt;
 </code></pre>
 
-<p><img src="/image-20190227154101350.png" alt="image-20190227154101350" /></p>
-
 <p>上面的代码，第一个会输出<code>undefined</code>，第二个输出为<code>10</code>。</p>
 
 <p>疑问：第一个<code>console.log()</code>语句，输出的是还没有声明的a，为什么会输出一个<code>undefined</code>。</p>
@@ -784,8 +768,6 @@
 
 <p>此时函数中的第一个<code>console.log()</code>语句输出结果为？第二个输出结果为？</p>
 
-<p><img src="/image-20190227155239554.png" alt="image-20190227155239554" /></p>
-
 <p>第一个输出<code>undefined</code>，为什么呢？</p>
 
 <p>因为函数中重新声明了a，那么这个时候a的声明提升到了函数内部的顶部，覆盖了全局变量a。所以此时直接<code>console.log()</code>a这个变量为undefined。</p>
@@ -854,8 +836,6 @@
 
 <p>效果如下：</p>
 
-<p><img src="/image-20190227161906011.png" alt="image-20190227161906011" /></p>
-
 <h2 id="函数参数的升级体验">函数参数的升级体验</h2>
 
 <p><strong>当实参个数超过形参个数</strong></p>
@@ -888,8 +868,6 @@
 
 <p>你会发现，当实参数量多于形参数量时，在浏览器中依然可以运行并且不会报错。</p>
 
-<p><img src="/image-20190228094523140.png" alt="image-20190228094523140" /></p>
-
 <p>那么我们如果想要获取这个多余的形参该怎么办呢？</p>
 
 <pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
@@ -906,7 +884,7 @@
 
 <p>我们将arguments打印出来看下效果：</p>
 
-<p><img src="/image-20190228100746393.png" alt="image-20190228100746393" />你可以在这其中看到，函数在调用过程中传递过来的所有的实参。</p>
+<p>你可以在这其中看到，函数在调用过程中传递过来的所有的实参。</p>
 
 <p>那么现在我们想要获取传递过来的多余的参数，可以使用arguments关键字参数直接获取。</p>
 
