@@ -95,7 +95,7 @@
 
 &lt;p&gt;在浏览器内的效果如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227115657453.png&#34; alt=&#34;image-20190227115657453&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-07.anonfile.com/Cdi2xcv5b8/5b7ebd27-1551354556/image-20190227115657453.png&#34; alt=&#34;image-20190227115657453&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;你会发现，通过函数的形式，可以节省大量的工作，而使用函数只需要两步：&lt;strong&gt;定义函数&lt;/strong&gt;、&lt;strong&gt;调用函数&lt;/strong&gt;。&lt;/p&gt;
 
@@ -138,7 +138,7 @@
 
 &lt;p&gt;效果如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227140412523.png&#34; alt=&#34;image-20190227140412523&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-05.anonfile.com/Aajcx3v1bd/33254ca8-1551354752/image-20190227140412523.png&#34; alt=&#34;image-20190227140412523&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Tip：定义一个函数之后，函数本身并不会执行，而是需要调用才可以执行。这一点一定要注意。&lt;/p&gt;
 
@@ -182,7 +182,7 @@
 
 &lt;p&gt;结果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227141649565.png&#34; alt=&#34;image-20190227141649565&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-06.anonfile.com/Hfjexav0bf/8e02116c-1551354784/image-20190227141649565.png&#34; alt=&#34;image-20190227141649565&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;我们在&lt;strong&gt;定义函数的时候用到的参数，那就叫“形参”&lt;/strong&gt;，例如上面的a和b就是形参。我们&lt;strong&gt;在调用函数时，与形参对应的数据叫“实参&lt;/strong&gt;。”其实“形参”和“实参”从名字上面来看就很好理解，所谓的形参就是“形同虚设”而到头来被其他数据替代掉的参数，实参就是实实在在的数据。&lt;/p&gt;
 
@@ -233,7 +233,7 @@
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227143540006.png&#34; alt=&#34;image-20190227143540006&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-04.anonfile.com/T0j3x2v4b8/0805945a-1551354818/image-20190227143540006.png&#34; alt=&#34;image-20190227143540006&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;在表达式中调用&#34;&gt;在表达式中调用&lt;/h2&gt;
 
@@ -388,7 +388,7 @@
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227154101350.png&#34; alt=&#34;image-20190227154101350&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-07.anonfile.com/ifk4x9v8b2/ea53f045-1551354874/image-20190227154101350.png&#34; alt=&#34;image-20190227154101350&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;上面的代码，第一个会输出&lt;code&gt;undefined&lt;/code&gt;，第二个输出为&lt;code&gt;10&lt;/code&gt;。&lt;/p&gt;
 
@@ -477,7 +477,7 @@
 
 &lt;p&gt;此时函数中的第一个&lt;code&gt;console.log()&lt;/code&gt;语句输出结果为？第二个输出结果为？&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227155239554.png&#34; alt=&#34;image-20190227155239554&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-07.anonfile.com/t8kfxev5b5/0fbbd6ce-1551354912/image-20190227155239554.png&#34; alt=&#34;image-20190227155239554&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;第一个输出&lt;code&gt;undefined&lt;/code&gt;，为什么呢？&lt;/p&gt;
 
@@ -547,7 +547,7 @@
 
 &lt;p&gt;效果如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190227161906011.png&#34; alt=&#34;image-20190227161906011&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-02.anonfile.com/83k3x5v6bb/7374dadd-1551354959/image-20190227161906011.png&#34; alt=&#34;image-20190227161906011&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;函数参数的升级体验&#34;&gt;函数参数的升级体验&lt;/h2&gt;
 
@@ -581,7 +581,7 @@
 
 &lt;p&gt;你会发现，当实参数量多于形参数量时，在浏览器中依然可以运行并且不会报错。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190228094523140.png&#34; alt=&#34;image-20190228094523140&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-06.anonfile.com/N9k8xbv8bc/c152fea9-1551355003/image-20190228094523140.png&#34; alt=&#34;image-20190228094523140&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;那么我们如果想要获取这个多余的形参该怎么办呢？&lt;/p&gt;
 
@@ -599,7 +599,7 @@
 
 &lt;p&gt;我们将arguments打印出来看下效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image-20190228100746393.png&#34; alt=&#34;image-20190228100746393&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn-02.anonfile.com/cblfxeveb4/3e4d5ddf-1551355030/image-20190228100746393.png&#34; alt=&#34;image-20190228100746393&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;你可以在这其中看到，函数在调用过程中传递过来的所有的实参。&lt;/p&gt;
 
