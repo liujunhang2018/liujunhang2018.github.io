@@ -6,10 +6,392 @@
     <description>Recent content on 思考让灵魂距离星空更近</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript常用事件</title>
+      <link>/post/javascript%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/javascript%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;事件三要素&#34;&gt;事件三要素&lt;/h2&gt;
+
+&lt;p&gt;通常情况下，在浏览器的事件过程中，分为事件三要素：事件源、事件、事件处理函数。&lt;/p&gt;
+
+&lt;p&gt;例如，经常使用的单击事件。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button id=&#39;btn&#39;&amp;gt;点击&amp;lt;/button&amp;gt;  事件源
+&amp;lt;script&amp;gt;
+	var oBtn = document.getElementById(&#39;btn&#39;);
+    // onclick 事件  
+    oBtn.onclick = function () {   // 事件处理函数
+        alert(&#39;hello,world!&#39;);
+    }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当事件源触发了事件，那么就会执行这个事件的回调函数(事件处理函数)。&lt;/p&gt;
+
+&lt;h2 id=&#34;鼠标事件&#34;&gt;鼠标事件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;click 单击事件&lt;/li&gt;
+&lt;li&gt;dblclick 双击事件&lt;/li&gt;
+&lt;li&gt;contextmenu  右击&lt;/li&gt;
+&lt;li&gt;mouseover 鼠标悬浮&lt;/li&gt;
+&lt;li&gt;mouseout 鼠标移出&lt;/li&gt;
+&lt;li&gt;mousedown 鼠标按键按下&lt;/li&gt;
+&lt;li&gt;mouseup鼠标按键抬起&lt;/li&gt;
+&lt;li&gt;mousemove 鼠标移动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;案例：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1.鼠标右击 — 自定义右键菜单&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;首先来创建自定义菜单的基本样式，并且让菜单右键显示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;!DOCTYPE html&amp;gt;
+  &amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+  	&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+  	&amp;lt;title&amp;gt;自定义右键菜单&amp;lt;/title&amp;gt;
+  	&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;
+  		body {
+  			font-size: 16px;
+  			font-family: &amp;quot;KaiTi&amp;quot;;
+  		}
+  		ul {
+  			list-style: none;
+  			margin:0;
+  			padding: 0;
+  		}
+  		a {
+  			text-decoration: none;
+  			color: #333;
+  		}
+  		.contextmenu {
+  			width: 200px;
+  			border: 1px solid #999;
+  			box-shadow: 3px 3px 3px #ccc;
+  			background-color: #fff;
+  			position: absolute;
+  			top: 10px;
+  			left: 10px;
+  			display: none;
+  		}
+  		.contextmenu li  {
+  			height: 38px;
+  			line-height: 38px;
+  		}
+  		.contextmenu li a {
+  			display: block;
+  			padding:0 20px;
+  		}
+  		.contextmenu li a:hover {
+  			background-color: #ccc;
+  			color: white;
+  			font-weight: bold;
+  		}
+  	&amp;lt;/style&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+  	&amp;lt;div class=&amp;quot;contextmenu&amp;quot; id=&amp;quot;context&amp;quot;&amp;gt;
+  		&amp;lt;ul&amp;gt;
+  			&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;复制&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  			&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;粘贴&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  			&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;剪切&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  			&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;获取种子&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  			&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;迅雷下载&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  		&amp;lt;/ul&amp;gt;
+  	&amp;lt;/div&amp;gt;
+  &amp;lt;/body&amp;gt;
+  &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+  	// 先来获取菜单列表，然后让其在鼠标右击的时候显示出来
+  	document.oncontextmenu = function () {
+  		// 首先获取菜单
+  		var contextmenu = document.getElementById(&#39;context&#39;);
+  		// 让菜单显示出来
+  		contextmenu.style.display = &amp;quot;block&amp;quot;;
+  		// 通过return false关闭系统默认菜单
+  		return false;
+  	}
+  	// 当鼠标单击之后，希望关闭右键菜单
+  	document.onclick = function () {
+  		var contextmenu = document.getElementById(&#39;context&#39;);
+  		// 让菜单在单击之后消失
+  		contextmenu.style.display = &#39;none&#39;;
+  	}
+  &amp;lt;/script&amp;gt;
+  &amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面的内容实现后,在接下来让右键菜单跟随鼠标的位置出现.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+  // 先来获取菜单列表，然后让其在鼠标右击的时候显示出来
+  	document.oncontextmenu = function (ob) { // ob 表示event事件
+  
+  		// 兼容event事件
+  		var e = ob || window.event;
+  
+  		// 首先获取菜单
+  		var context = document.getElementById(&#39;context&#39;);
+  		// 让菜单显示出来
+  		context.style.display = &amp;quot;block&amp;quot;;
+  
+  
+  		// 让菜单跟随鼠标位置而移动
+  		// 需要使用鼠标的坐标，让鼠标的坐标位置为菜单的左上角0，0
+  		var x  = e.clientX;
+  		var y = e.clientY;
+  
+  		// 将获得的值赋值给菜单的右键菜单,从而实现让右键菜单会出现在鼠标的位置上
+  		context.style.left = x + &#39;px&#39;; 
+  		context.style.top = y + &#39;px&#39;;
+  
+  
+  
+  
+  
+  
+  		// 通过return false关闭系统默认菜单
+  		return false;
+  	}
+  	// 当鼠标单击之后，希望关闭右键菜单
+  	document.onclick = function () {
+  		var contextmenu = document.getElementById(&#39;context&#39;);
+  		// 让菜单在单击之后消失
+  		contextmenu.style.display = &#39;none&#39;;
+  	}
+  &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面的右键菜单在使用的时候，发现在屏幕边界会出现跑出边界的现象，下面来解决一下这个问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;script&amp;gt;
+  // 先来获取菜单列表，然后让其在鼠标右击的时候显示出来
+  	document.oncontextmenu = function (ob) { // ob 表示event事件
+  
+  		// 兼容event事件
+  		var e = ob || window.event;
+  
+  		// 首先获取菜单
+  		var context = document.getElementById(&#39;context&#39;);
+  		// 让菜单显示出来
+  		context.style.display = &amp;quot;block&amp;quot;;
+  
+  
+  		// 让菜单跟随鼠标位置而移动
+  		// 需要使用鼠标的坐标，让鼠标的坐标位置为菜单的左上角0，0
+  		var x  = e.clientX;
+  		var y = e.clientY;
+  
+  
+  		// 获取窗口的宽度和高度(在浏览器中的可用窗口宽度和高度，当调整窗口大小的时候，获取的值也会变)
+  		var w = window.innerWidth;
+  		var h = window.innerHeight;
+  		console.log(&amp;quot;窗口宽度为：&amp;quot;+w,&amp;quot;窗口的高度为：&amp;quot;+h);
+  
+  
+  		// 将获得的值赋值给菜单的右键菜单,从而实现让右键菜单会出现在鼠标的位置上
+  		// context.style.left = x + &#39;px&#39;; 
+  		// context.style.top = y + &#39;px&#39;;
+  		// 重新调整宽度和高度
+  		context.style.left =Math.min(w - 202,x) + &#39;px&#39;; 
+  		context.style.top = Math.min(h - 230,y) + &#39;px&#39;;
+  
+  
+  		// 通过return false关闭系统默认菜单
+  		return false;
+  	}
+  	// 当鼠标单击之后，希望关闭右键菜单
+  	document.onclick = function () {
+  		var contextmenu = document.getElementById(&#39;context&#39;);
+  		// 让菜单在单击之后消失
+  		contextmenu.style.display = &#39;none&#39;;
+  	}
+  &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;onmousedown onmouseup&lt;/p&gt;
+
+&lt;p&gt;我们有的时候需要判别用户的鼠标按键，所以我们可以通过这个事件搭配event来完成。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    document.onmousedown = function (ev) {
+        var ev = ev || window.event;
+    
+        console.log(ev.button);
+    
+        switch(ev.button) {
+            case 0 :
+                console.log(&amp;quot;左键&amp;quot;);
+                break;
+            case 1:
+                console.log(&amp;quot;滚轮&amp;quot;);
+                break;
+            case 2:
+                console.log(&amp;quot;右键&amp;quot;);
+                break;
+            default:
+                console.log(&amp;quot;...&amp;quot;);
+        }
+    }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;onmousedown 、onmouseup 、 onmousemove ：图层拖拽&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;图层拖拽&amp;lt;/title&amp;gt;
+    &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;
+        .box {
+            width:200px;
+            height: 200px;
+            background-color: orange;
+            border: 2px solid pink;
+            cursor: pointer;
+            position: absolute;
+            left:100px;
+            top: 20px;
+        }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;  
+    &amp;lt;h1&amp;gt;图层拖拽&amp;lt;/h1&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;div class=&amp;quot;box&amp;quot; id=&amp;quot;box&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+        
+    // 获取元素绑定事件
+    var oBox = document.getElementById(&amp;quot;box&amp;quot;);
+    oBox.onmousedown = function (env) {
+        var env = env || window.event;
+    
+        // 获取一下鼠标在div上的位置
+        var left = env.clientX - oBox.offsetLeft;
+        var top = env.clientY - oBox.offsetTop;
+    
+        // 为了方便查看效果，当鼠标点击之后，改变一下颜色
+        oBox.style.background = &amp;quot;#999&amp;quot;;
+    
+        oBox.onmousemove = function (env) {
+            var env = env || window.event;
+    
+            var x = env.clientX;
+            var y = env.clientY;
+            oBox.style.left = (x - left) + &#39;px&#39;;
+            oBox.style.top = (y - top) + &#39;px&#39;;
+        }
+            
+    
+    }
+    
+    oBox.onmouseup = function () {
+        oBox.style.background = &amp;quot;orange&amp;quot;;
+        oBox.onmousemove = function (){}
+    }
+    
+&amp;lt;/script&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;键盘事件&#34;&gt;键盘事件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;keydown 键盘按键按下&lt;/li&gt;
+&lt;li&gt;keyup 键盘按键抬起&lt;/li&gt;
+&lt;li&gt;keypress&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;案例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+	// document.onkeydown = function (env) {  // 这个事件的缺点是一些符号显示不出
+	// 	// 通过event对象keycode属性来实现获取按键
+	// 	var env = env || window.event;
+	// 	console.log(env.keyCode); // 可以得到按键对应的ascii码
+	// 	// 可以通过fromCharCode来将ascii码转换成对应的字符串
+	// 	console.log(String.fromCharCode(env.keyCode));
+	// 	console.log(&amp;quot;按键按下&amp;quot;);
+	// }
+
+	document.onkeypress = function (env) {//这个事件可以将字符+符号都显示出来，但是控制键不行
+		// 通过event对象keycode属性来实现获取按键
+		var env = env || window.event;
+		console.log(env.keyCode); // 可以得到按键对应的ascii码
+		// 可以通过fromCharCode来将ascii码转换成对应的字符串
+		console.log(String.fromCharCode(env.keyCode));
+		console.log(&amp;quot;按键按下&amp;quot;);
+	}
+
+
+	document.onkeyup = function () {
+		console.log(&amp;quot;按键抬起&amp;quot;);
+	}
+
+
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;文档事件&#34;&gt;文档事件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;load 加载完成&lt;/li&gt;
+&lt;li&gt;unload 文档关闭&lt;/li&gt;
+&lt;li&gt;beforeunload 在关闭之间&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;load事件 可以用作文档入口函数，也可以用来表示下面的图片加载完成&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;表单事件&#34;&gt;表单事件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;submit 表单提交，绑定给form元素&lt;/li&gt;
+&lt;li&gt;reset 表单重置，绑定给form元素&lt;/li&gt;
+&lt;li&gt;blur 失去焦点&lt;/li&gt;
+&lt;li&gt;focus 获得焦点&lt;/li&gt;
+&lt;li&gt;change 表单控制的内容改变  ，通常绑定给radio checkbox select 。如果绑定给输入的input，必须满足 内容改变和失去焦点才能触发&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;图片事件&#34;&gt;图片事件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;abort 图片加载中断(原理)&lt;/li&gt;
+&lt;li&gt;load 图片加载完成&lt;/li&gt;
+&lt;li&gt;error 图片加载错误&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;其他事件&#34;&gt;其他事件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;scroll  元素内部的内容滚动&lt;/li&gt;
+&lt;li&gt;resize 窗口尺寸发生变化时触发，绑定给window&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>JavaScript基础之函数</title>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>常用事件 on 思考让灵魂距离星空更近</title>
+    <link>/tags/%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</link>
+    <description>Recent content in 常用事件 on 思考让灵魂距离星空更近</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript常用事件</title>
+      <link>/post/javascript%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/javascript%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</guid>
+      <description>事件三要素 通常情况下，在浏览器的事件过程中，分为事件三要素：事件源、事件、事件处理函数。 例如，经常使用的单击事件。 &amp;lt;button id=&#39;btn&#39;&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

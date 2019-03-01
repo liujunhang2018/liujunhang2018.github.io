@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/javascript%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,6 +93,13 @@
   </url>
   
   <url>
+    <loc>/tags/js/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/life/</loc>
     <lastmod>2019-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,7 +108,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -115,7 +129,7 @@
   
   <url>
     <loc>/categories/web%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -135,8 +149,15 @@
   </url>
   
   <url>
+    <loc>/tags/%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
