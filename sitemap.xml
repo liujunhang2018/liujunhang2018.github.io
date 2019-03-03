@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E7%9F%A5%E6%89%80%E6%8E%AA%E7%9A%84%E5%B9%B4%E7%BA%AA%E7%94%A8%E6%97%B6%E9%97%B4%E7%A7%AF%E7%B4%AF%E8%B4%A2%E5%AF%8C/</loc>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/javascript%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2019-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -108,7 +115,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -156,8 +163,15 @@
   </url>
   
   <url>
+    <loc>/tags/%E5%BF%83%E6%80%81/</loc>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -184,15 +198,15 @@
   </url>
   
   <url>
-    <loc>/tags/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2019-02-26T00:00:00+00:00</lastmod>
+    <loc>/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <loc>/tags/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
